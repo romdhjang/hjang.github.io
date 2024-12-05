@@ -1,0 +1,12 @@
+@font-face{
+	font-family: 'Window';
+	src: url('Window.otf') format('otf');
+	font-weight: 400;
+}
+
+body{
+	/* this is the outermost element on your page*/
+	background: yellow;
+	font-family: 'Window';
+	font-size: 100px;
+}
