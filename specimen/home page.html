@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corner Radius Tester</title>
+  <link rel="stylesheet" href="home.css">
+  <style>
+    @font-face {
+      font-family: 'ABCFavoritMono';
+      src: url('ABCFavoritMono-Regular-Trial.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    nav {
+      font-family: 'ABCFavoritMono', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      gap: 40px;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .square-box {
+      width: 600px;
+      height: 600px;
+    }
+
+    .slider {
+      width: 100%;
+      appearance: none;
+      height: 2px; /* 얇은 검정색 선 */
+      background: black;
+      border-radius: 2px;
+      outline: none;
+    }
+
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px; /* 원형 크기 */
+      height: 16px;
+      background: black; /* 검정 원형 */
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: black;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="#">VARIABLE</a>
+    <a href="#">PREVIEW</a>
+  </nav>
+
+  <div class="tester-container">
+    <div class="square-box" id="square-box"></div>
+    <div class="slider-container">
+      <label for="radius-slider">Adjust Corner Radius: <span id="radius-value">0</span>px</label>
+      <input type="range" id="radius-slider" class="slider" min="0" max="300" value="0">
+    </div>
+  </div>
+
+  <script>
+    const squareBox = document.getElementById('square-box');
+    const slider = document.getElementById('radius-slider');
+    const radiusValue = document.getElementById('radius-value');
+
+    slider.addEventListener('input', function () {
+      const radius = slider.value;
+      squareBox.style.borderRadius = radius + 'px';
+      radiusValue.textContent = radius;
+    });
+  </script>
+</body>
+</html>
