@@ -8,63 +8,20 @@
 </head>
 <body>
   <div class="container">
-    <!-- 왼쪽 패널 -->
-    <div class="left-panel">
-      <nav class="nav">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-      </nav>
-      <div class="input-section">
-        <div class="input-box-group">
-          <input type="text" id="size" placeholder="124pt" class="size-box">
-          <input type="text" id="text" placeholder="Type here..." class="text-box">
-        </div>
-      </div>
-      <div class="preview-box">
-        <div id="left-preview">Preview</div>
-      </div>
+    <!-- 텍스트 입력 칸과 스크롤바 -->
+    <div class="controls">
+      <div id="main-slider" class="custom-slider"></div>
+      <input type="text" id="main-input" placeholder="Type your text here...">
     </div>
 
-    <!-- 오른쪽 패널 -->
-    <div class="right-panel">
-      <nav class="nav">
-        <a href="#">VARIABLE</a>
-        <a href="#">PREVIEW</a>
-      </nav>
-      <div class="input-section">
-        <div class="input-box-group">
-          <input type="text" id="size2" placeholder="124pt" class="size-box">
-          <input type="text" id="text2" placeholder="Type here..." class="text-box">
-        </div>
-      </div>
-      <div class="preview-box">
-        <div id="right-preview">Preview</div>
-      </div>
+    <!-- 텍스트 프리뷰 박스 -->
+    <div class="preview-container">
+      <div class="preview-box" id="left-preview">SQUARE</div>
+      <div class="preview-box" id="right-preview">ROUND</div>
     </div>
   </div>
 
-  <script>
-    // 왼쪽 패널 동적 업데이트
-    document.getElementById("text").addEventListener("input", function () {
-      const text = this.value;
-      document.getElementById("left-preview").textContent = text;
-    });
-
-    document.getElementById("size").addEventListener("input", function () {
-      const size = this.value.replace("pt", "");
-      document.getElementById("left-preview").style.fontSize = size + "pt";
-    });
-
-    // 오른쪽 패널 동적 업데이트
-    document.getElementById("text2").addEventListener("input", function () {
-      const text = this.value;
-      document.getElementById("right-preview").textContent = text;
-    });
-
-    document.getElementById("size2").addEventListener("input", function () {
-      const size = this.value.replace("pt", "");
-      document.getElementById("right-preview").style.fontSize = size + "pt";
-    });
-  </script>
+  <!-- JavaScript 연결 -->
+  <script src="custom_slider.js"></script>
 </body>
 </html>
