@@ -1,12 +1,30 @@
-@font-face{
-	font-family: 'Window';
-	src: url('Window.otf') format('otf');
-	font-weight: 400;
+@font-face {
+    font-family: 'Window';
+    src: url('Window.otf') format('opentype'); /* 확장자 표준화 */
+    font-weight: 400;
 }
 
-body{
-	/* this is the outermost element on your page*/
-	background: yellow;
-	font-family: 'Window';
-	font-size: 100px;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 화면 전체 높이 사용 */
+}
+
+body {
+    background: black;
+    font-family: 'Window';
+    font-size: 100px;
+
+    /* Flexbox로 전체 화면 중앙 정렬 */
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center;     /* 수직 중앙 정렬 */
+    text-align: center;      /* 텍스트 중앙 정렬 */
+}
+
+a {
+    display: block; /* 링크를 블록 요소로 만들어 간격 분리 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: black; /* 링크 색상 */
+    margin: 20px 0; /* 위아래 여백 추가 */
 }

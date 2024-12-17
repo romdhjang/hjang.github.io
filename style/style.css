@@ -1,13 +1,78 @@
 @font-face {
-    font-family: 'Window';
-    src: url('Window.woff2') format('woff2'),
-         url('Window.woff') format('woff'),
-         url('Window.otf') format('opentype');
-    font-weight: 400;
+    font-family: 'TWKLausanne';
+    src: url('TWKLausanne-950.otf') format('opentype'); /* 새 폰트 적용 */
+    font-weight: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
-    background: yellow;
-    font-family: 'Window', sans-serif;
-    font-size: 100px;
+    background: rgb(203, 252, 99); /* 배경색 */
+    font-family: 'TWKLausanne', sans-serif; /* 새로운 폰트 적용 */
+    font-size: 5vw; /* 화면 크기에 맞게 조정되는 글자 크기 */
+    color: rgb(228, 226, 227); /* 글자 색상 */
+
+    /* 화면 중앙 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase; /* 모든 글자를 대문자로 변환 */
+    line-height: 1.2; /* 줄 간격 설정 */
+    text-shadow: 1px 1px 0 rgb(228, 226, 227), /* 기본 글자 두께 강조 */
+                 -1px -1px 0 rgb(228, 226, 227),
+                 1px -1px 0 rgb(228, 226, 227),
+                 -1px 1px 0 rgb(228, 226, 227);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: rgb(228, 226, 227); /* 기본 색상 회색 */
+    letter-spacing: 3px;
+    margin: 10px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* 색상 및 그림자 전환 부드럽게 */
+    text-shadow: 1px 1px 0 rgb(228, 226, 227), /* 링크도 두껍게 표현 */
+                 -1px -1px 0 rgb(228, 226, 227),
+                 1px -1px 0 rgb(228, 226, 227),
+                 -1px 1px 0 rgb(228, 226, 227);
+}
+
+a:hover {
+    color: black; /* 마우스를 가져다 대면 검정색으로 변경 */
+    text-shadow: 1px 1px 0 black, /* 호버 시 검정색 그림자 추가 */
+                 -1px -1px 0 black,
+                 1px -1px 0 black,
+                 -1px 1px 0 black;
+}
+
+/* 토글된 모드 스타일 */
+body.inverted-mode {
+    background: rgb(228, 226, 227); /* 배경 회색 */
+    color: rgb(203, 252, 99); /* 글자 연두색 */
+    text-shadow: 1px 1px 0 rgb(203, 252, 99),
+                 -1px -1px 0 rgb(203, 252, 99),
+                 1px -1px 0 rgb(203, 252, 99),
+                 -1px 1px 0 rgb(203, 252, 99); /* 연두색 그림자 */
+}
+
+body.inverted-mode a {
+    color: rgb(203, 252, 99);
+    text-shadow: 1px 1px 0 rgb(203, 252, 99),
+                 -1px -1px 0 rgb(203, 252, 99),
+                 1px -1px 0 rgb(203, 252, 99),
+                 -1px 1px 0 rgb(203, 252, 99);
+}
+
+body.inverted-mode a:hover {
+    color: white;
+    text-shadow: 1px 1px 0 white,
+                 -1px -1px 0 white,
+                 1px -1px 0 white,
+                 -1px 1px 0 white;
 }

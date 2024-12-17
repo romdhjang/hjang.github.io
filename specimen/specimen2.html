@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Font Viewer</title>
+  <link rel="stylesheet" href="type_specimen_styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 텍스트 입력 칸과 스크롤바 -->
+    <div class="controls">
+      <div id="main-slider" class="custom-slider"></div>
+      <input type="text" id="main-input" placeholder="Type your text here...">
+    </div>
+
+    <!-- 텍스트 프리뷰 박스 -->
+    <div class="preview-container">
+      <div class="preview-box" id="left-preview">SQUARE</div>
+      <div class="preview-box" id="right-preview">ROUND</div>
+    </div>
+  </div>
+
+  <!-- JavaScript 연결 -->
+  <script src="custom_slider.js"></script>
+</body>
+</html>
