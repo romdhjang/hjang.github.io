@@ -1,30 +1,78 @@
 @font-face {
-    font-family: 'Window';
-    src: url('Window.otf') format('opentype'); /* 확장자 표준화 */
-    font-weight: 400;
+    font-family: 'TWKLausanne';
+    src: url('TWKLausanne-950.otf') format('opentype'); /* 새 폰트 적용 */
+    font-weight: normal;
 }
 
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* 화면 전체 높이 사용 */
+    height: 100%;
 }
 
 body {
-    background: black;
-    font-family: 'Window';
-    font-size: 100px;
+    background: rgb(203, 252, 99); /* 배경색 */
+    font-family: 'TWKLausanne', sans-serif; /* 새로운 폰트 적용 */
+    font-size: 5vw; /* 화면 크기에 맞게 조정되는 글자 크기 */
+    color: rgb(228, 226, 227); /* 글자 색상 */
 
-    /* Flexbox로 전체 화면 중앙 정렬 */
+    /* 화면 중앙 정렬 */
     display: flex;
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center;     /* 수직 중앙 정렬 */
-    text-align: center;      /* 텍스트 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase; /* 모든 글자를 대문자로 변환 */
+    line-height: 1.2; /* 줄 간격 설정 */
+    text-shadow: 1px 1px 0 rgb(228, 226, 227), /* 기본 글자 두께 강조 */
+                 -1px -1px 0 rgb(228, 226, 227),
+                 1px -1px 0 rgb(228, 226, 227),
+                 -1px 1px 0 rgb(228, 226, 227);
 }
 
 a {
-    display: block; /* 링크를 블록 요소로 만들어 간격 분리 */
-    text-decoration: none; /* 밑줄 제거 */
-    color: black; /* 링크 색상 */
-    margin: 20px 0; /* 위아래 여백 추가 */
+    display: block;
+    text-decoration: none;
+    color: rgb(228, 226, 227); /* 기본 색상 회색 */
+    letter-spacing: 3px;
+    margin: 10px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* 색상 및 그림자 전환 부드럽게 */
+    text-shadow: 1px 1px 0 rgb(228, 226, 227), /* 링크도 두껍게 표현 */
+                 -1px -1px 0 rgb(228, 226, 227),
+                 1px -1px 0 rgb(228, 226, 227),
+                 -1px 1px 0 rgb(228, 226, 227);
+}
+
+a:hover {
+    color: black; /* 마우스를 가져다 대면 검정색으로 변경 */
+    text-shadow: 1px 1px 0 black, /* 호버 시 검정색 그림자 추가 */
+                 -1px -1px 0 black,
+                 1px -1px 0 black,
+                 -1px 1px 0 black;
+}
+
+/* 토글된 모드 스타일 */
+body.inverted-mode {
+    background: rgb(228, 226, 227); /* 배경 회색 */
+    color: rgb(203, 252, 99); /* 글자 연두색 */
+    text-shadow: 1px 1px 0 rgb(203, 252, 99),
+                 -1px -1px 0 rgb(203, 252, 99),
+                 1px -1px 0 rgb(203, 252, 99),
+                 -1px 1px 0 rgb(203, 252, 99); /* 연두색 그림자 */
+}
+
+body.inverted-mode a {
+    color: rgb(203, 252, 99);
+    text-shadow: 1px 1px 0 rgb(203, 252, 99),
+                 -1px -1px 0 rgb(203, 252, 99),
+                 1px -1px 0 rgb(203, 252, 99),
+                 -1px 1px 0 rgb(203, 252, 99);
+}
+
+body.inverted-mode a:hover {
+    color: whites;
+    text-shadow: 1px 1px 0 white,
+                 -1px -1px 0 white,
+                 1px -1px 0 white,
+                 -1px 1px 0 white;
 }
